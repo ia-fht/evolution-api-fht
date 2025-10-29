@@ -27,7 +27,7 @@ COPY ./Docker ./Docker
 RUN chmod +x ./Docker/scripts/* && dos2unix ./Docker/scripts/*
 
 #RUN ./Docker/scripts/generate_database.sh
-
+RUN npx prisma generate --schema ./prisma/postgresql-schema.prisma
 RUN npm run build
 
 FROM node:24-alpine AS final
