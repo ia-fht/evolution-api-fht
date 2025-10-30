@@ -28,8 +28,9 @@ RUN chmod +x ./Docker/scripts/* && dos2unix ./Docker/scripts/*
 
 #RUN ./Docker/scripts/generate_database.sh
 RUN rm -rf node_modules/.prisma
-RUN npx prisma generate --schema ./prisma/postgresql-schema.prisma --skip-validate --data-proxy
 RUN npm run build
+
+CMD npx prisma generate --schema ./prisma/postgresql-schema.prisma --skip-validate && npm start
 
 FROM node:24-alpine AS final
 
