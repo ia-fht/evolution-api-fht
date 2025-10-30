@@ -1,7 +1,8 @@
 import { InstanceDto } from '@api/dto/instance.dto';
 import { ProxyDto } from '@api/dto/proxy.dto';
 import { Logger } from '@config/logger.config';
-import { Proxy } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
+const prisma = new PrismaClient();
 
 import { WAMonitoringService } from './monitor.service';
 
