@@ -649,7 +649,7 @@ model FlowiseSetting {
   instanceId        String    @unique
 }
 
-model IsOnWhatsapp {
+model isOnWhatsapp {
   id         String   @id @default(cuid())
   remoteJid  String   @unique @db.VarChar(100)
   jidOptions String
